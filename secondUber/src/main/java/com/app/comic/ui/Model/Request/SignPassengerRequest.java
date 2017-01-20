@@ -13,6 +13,7 @@ public class SignPassengerRequest {
     String phone;
     String smoker;
     String prefGender;
+    String userImage;
 
     public String getStudentID() {
         return studentID;
@@ -70,6 +71,14 @@ public class SignPassengerRequest {
         this.prefGender = prefGender;
     }
 
+    public String getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
+    }
+
 
     /*Initiate Class*/
     public SignPassengerRequest() {
@@ -84,8 +93,8 @@ public class SignPassengerRequest {
         this.phone = data.getPhone();
         this.smoker = data.getSmoker();
         this.prefGender = data.getPrefGender();
+        this.userImage = data.getUserImage();
 
     }
-
 
 }

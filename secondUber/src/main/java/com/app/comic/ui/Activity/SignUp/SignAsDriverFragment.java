@@ -496,11 +496,10 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
         signDriverRequest.setPlatNumber(txtPlatNumber.getText().toString());
         signDriverRequest.setLicenseNumber(txtLicenseNumber.getText().toString());
         signDriverRequest.setCarType(txtTypeOfCar.getTag().toString());
-
-        /*if (imageBase64 == null) {
+        if (imageBase64 == null) {
             imageBase64 = "";
         }
-        signDriverRequest.setUserImage(imageBase64);*/
+        signDriverRequest.setDriverImage(imageBase64);
 
         presenter.onSignDriverRequest(signDriverRequest);
 
