@@ -3,12 +3,15 @@ package com.app.comic.ui.Activity.SignUp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.app.comic.MainController;
@@ -35,6 +38,7 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class SignAsPassengerFragment extends BaseFragment implements Validator.ValidationListener, HomePresenter.SignPassengerView {
@@ -68,6 +72,15 @@ public class SignAsPassengerFragment extends BaseFragment implements Validator.V
     @InjectView(R.id.txtSmoker)
     TextView txtSmoker;
 
+    @InjectView(R.id.radioSex)
+    RadioGroup radioSex;
+
+    @InjectView(R.id.prefRadioSex)
+    RadioGroup prefRadioSex;
+
+    RadioButton radioSexButton;
+    RadioButton prefRadioSexButton;
+
     private Validator mValidator;
     private ArrayList<DropDownItem> purposeList = new ArrayList<DropDownItem>();
     View view;
@@ -100,6 +113,7 @@ public class SignAsPassengerFragment extends BaseFragment implements Validator.V
         view = inflater.inflate(R.layout.share_ride_sign_as_passenger, container, false);
         ButterKnife.inject(this, view);
 
+
         purposeList = getSmoker(act);
 
         txtSmoker.setText(purposeList.get(0).getText());
@@ -119,6 +133,7 @@ public class SignAsPassengerFragment extends BaseFragment implements Validator.V
             @Override
             public void onClick(View view) {
 
+                hideKeyboard();
                 mValidator.validate();
 
             }
@@ -134,22 +149,42 @@ public class SignAsPassengerFragment extends BaseFragment implements Validator.V
 
         Boolean status = MainController.getRequestStatus(obj.getStatus(), obj.getMessage(), getActivity());
         if (status) {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            getActivity().startActivity(intent);
-            getActivity().finish();
+
+            new SweetAlertDialog(act, SweetAlertDialog.SUCCESS_TYPE)
+                    .setTitleText("Success!")
+                    .setContentText("Successfully registered!")
+                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            Intent intent = new Intent(getActivity(), LoginActivity.class);
+                            getActivity().startActivity(intent);
+                            getActivity().finish();
+                            sDialog.dismiss();
+                        }
+                    })
+                    .show();
         }
+
     }
 
     @Override
     public void onValidationSucceeded() {
 
+        int selectedId = radioSex.getCheckedRadioButtonId();
+        int prefSelectedId = prefRadioSex.getCheckedRadioButtonId();
+
+        radioSexButton = (RadioButton) view.findViewById(selectedId);
+        prefRadioSexButton = (RadioButton) view.findViewById(prefSelectedId);
+
+        initiateLoading(getActivity());
+
         /* Validation Success - Start send data to server */
         SignPassengerRequest signPassengerRequest = new SignPassengerRequest();
         signPassengerRequest.setUsername(txtUsername.getText().toString());
-        signPassengerRequest.setGender("Male");
+        signPassengerRequest.setGender(radioSexButton.getText().toString());
         signPassengerRequest.setPassword(txtPassword.getText().toString());
         signPassengerRequest.setPhone(txtPhoneNumber.getText().toString());
-        signPassengerRequest.setPrefGender("Male");
+        signPassengerRequest.setPrefGender(prefRadioSexButton.getText().toString());
         signPassengerRequest.setSmoker(txtSmoker.getTag().toString());
         signPassengerRequest.setStudentID(txtStudentID.getText().toString());
         presenter.onRegisterRequest(signPassengerRequest);

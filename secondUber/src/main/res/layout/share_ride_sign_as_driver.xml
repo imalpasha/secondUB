@@ -35,7 +35,7 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/profile_addImage"
+                android:id="@+id/driver_addImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -96,29 +96,41 @@
             android:textColorHint="@color/input_login_hint" />
 
         <LinearLayout
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender"
+                android:layout_weight="0.4"
                 android:padding="10dp"
-                android:layout_weight="1" />
+                android:text="Gender" />
 
-            <RadioButton
-                android:text="Male"
+            <RadioGroup
+                android:id="@+id/radioSex"
+                android:layout_weight="0.6"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:weightSum="1"
+                android:layout_height="wrap_content" >
 
-            <RadioButton
-                android:text="Female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -129,7 +141,7 @@
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:hint="Phone Number"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/input_login"
@@ -226,29 +238,41 @@
 
 
         <LinearLayout
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender"
+                android:layout_weight="0.4"
                 android:padding="10dp"
-                android:layout_weight="1" />
+                android:text="Gender" />
 
-            <RadioButton
-                android:text="Male"
+            <RadioGroup
+                android:id="@+id/prefRadioSex"
+                android:layout_weight="0.6"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:weightSum="1"
+                android:layout_height="wrap_content" >
 
-            <RadioButton
-                android:text="Female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <RadioButton
+                    android:id="@+id/prefRadioMale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/prefRadioFemale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
 
         </LinearLayout>
 

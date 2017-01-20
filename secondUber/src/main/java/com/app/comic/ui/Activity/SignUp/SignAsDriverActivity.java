@@ -27,7 +27,7 @@ public class SignAsDriverActivity extends MainFragmentActivity implements Fragme
         fragmentManager.beginTransaction().replace(R.id.main_content, SignAsDriverFragment.newInstance()).commit();
 
         setTitle("Sign Up");
-
+        setBackButton();
         // [END shared_tracker]
 
     }

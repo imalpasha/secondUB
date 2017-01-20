@@ -6,45 +6,32 @@ package com.app.comic.ui.Model.Request;
 public class LoginRequest {
 
     /*Local Data Send To Server*/
-    String UserName;
-    String Password;
+    String username;
+    String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     /*Initiate Class*/
     public LoginRequest() {
     }
 
-
     public LoginRequest(LoginRequest data) {
-        UserName = data.getUsername();
-        Password = data.getPassword();
-    }
-
-    public String getPassword() {
-
-        return Password;
-    }
-
-    public void setPassword(String password) {
-
-        this.Password = password;
-    }
-
-    public String getUsername() {
-
-        return UserName;
-    }
-
-    public void setUsername(String username) {
-
-        this.UserName = username;
-    }
-
-
-    /*Response Data From Server*/
-    String status;
-
-    public String getStatus() {
-        return status;
+        username = data.getUsername();
+        password = data.getPassword();
     }
 
 

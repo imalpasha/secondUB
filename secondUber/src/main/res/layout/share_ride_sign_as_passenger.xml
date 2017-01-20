@@ -18,14 +18,14 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:gravity="center"
             android:padding="10dp"
+            android:gravity="center"
+            android:background="@null"
             android:text="Registration"
             android:textAllCaps="true"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/profile_addImage"
+                android:id="@+id/passenger_addImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -43,7 +43,6 @@
                 android:src="@drawable/add"/>
 
         </LinearLayout>
-
         <EditText
             android:id="@+id/txtStudentID"
             android:layout_width="fill_parent"
@@ -103,23 +102,30 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.4"
                 android:padding="10dp"
-                android:layout_marginRight="15dp"
                 android:text="Gender" />
 
             <RadioGroup
+                android:id="@+id/radioSex"
+                android:layout_weight="0.6"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:weightSum="1"
+                android:layout_height="wrap_content" >
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/radioMale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="Male" />
+                    android:text="Male"
+                    android:checked="true" />
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/radioFemale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:text="Female" />
 
@@ -172,28 +178,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.4"
                 android:padding="10dp"
-                android:layout_marginRight="15dp"
                 android:text="Gender" />
 
             <RadioGroup
+                android:id="@+id/prefRadioSex"
+                android:layout_weight="0.6"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:weightSum="1"
+                android:layout_height="wrap_content" >
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/prefRadioMale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="Male" />
+                    android:text="Male"
+                    android:checked="true" />
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/prefRadioFemale"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:text="Female" />
 

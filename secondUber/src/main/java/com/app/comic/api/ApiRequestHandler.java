@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 
+import com.app.comic.MainFragmentActivity;
+import com.app.comic.base.BaseFragment;
 import com.app.comic.ui.Model.Receive.DestinationReceive;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
 import com.app.comic.ui.Model.Receive.LoginReceive;
@@ -111,13 +113,15 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
                 }
             }
 
             @Override
             public void onFailure(Call<ListRidesReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });
@@ -142,13 +146,14 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
                 }
             }
 
             @Override
             public void onFailure(Call<SelectReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });
@@ -172,13 +177,14 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
                 }
             }
 
             @Override
             public void onFailure(Call<LoginReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });
@@ -202,13 +208,14 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
                 }
             }
 
             @Override
             public void onFailure(Call<DestinationReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });
@@ -233,13 +240,14 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
                 }
             }
 
             @Override
             public void onFailure(Call<SignPassengerReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });
@@ -263,13 +271,14 @@ public class ApiRequestHandler {
                     int statusCode = response.code();
                     // handle request errors yourself
                     ResponseBody errorBody = response.errorBody();
-                    Log.e("Failed", Integer.toString(statusCode));
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
                 }
             }
 
             @Override
             public void onFailure(Call<SignDriverReceive> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
 
             }
         });

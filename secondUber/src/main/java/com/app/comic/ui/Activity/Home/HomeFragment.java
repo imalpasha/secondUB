@@ -14,6 +14,7 @@ import com.app.comic.ui.Activity.DestinationBooking.DestinationBookingActivity;
 import com.app.comic.ui.Activity.Profile.UpdatePassengerActivity;
 import com.app.comic.ui.Activity.SignUp.SignUpAsActivity;
 import com.app.comic.utils.SharedPrefManager;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -29,6 +30,9 @@ public class HomeFragment extends BaseFragment {
 
     @InjectView(R.id.btnUpdate)
     Button btnUpdate;
+
+    @InjectView(R.id.btnLogout)
+    Button btnLogout;
 
 
     public static HomeFragment newInstance() {
@@ -70,7 +74,12 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
-
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().finish();
+            }
+        });
 
         return view;
     }
