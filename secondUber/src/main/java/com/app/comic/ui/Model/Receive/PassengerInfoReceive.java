@@ -91,6 +91,14 @@ public class PassengerInfoReceive {
             this.pref_gender = pref_gender;
         }
 
+        public String getUser_image() {
+            return user_image;
+        }
+
+        public void setUser_image(String user_image) {
+            this.user_image = user_image;
+        }
+
         private String student_id;
         private String id;
         private String username;
@@ -98,6 +106,7 @@ public class PassengerInfoReceive {
         private String phone;
         private String smoker;
         private String pref_gender;
+        private String user_image;
 
     }
 
