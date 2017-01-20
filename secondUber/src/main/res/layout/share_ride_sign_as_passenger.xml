@@ -43,6 +43,7 @@
                 android:src="@drawable/add"/>
 
         </LinearLayout>
+
         <EditText
             android:id="@+id/txtStudentID"
             android:layout_width="fill_parent"
