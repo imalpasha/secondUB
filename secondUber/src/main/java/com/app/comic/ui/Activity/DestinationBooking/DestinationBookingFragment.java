@@ -3,6 +3,7 @@ package com.app.comic.ui.Activity.DestinationBooking;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -200,6 +201,12 @@ public class DestinationBookingFragment extends BaseFragment implements DatePick
         HashMap<String, String> init2 = pref.getUsername();
         String username = init2.get(SharedPrefManager.USER_NAME);
 
+        //check user type
+        HashMap<String, String> init3 = pref.getPhone();
+        String phone = init3.get(SharedPrefManager.USER_PHONE);
+
+        Log.e("Phone",phone);
+
         initiateLoading(getActivity());
         DestinationRequest destinationRequest = new DestinationRequest();
         destinationRequest.setRideAddress(txtRideAddress.getText().toString());
@@ -209,7 +216,7 @@ public class DestinationBookingFragment extends BaseFragment implements DatePick
         destinationRequest.setRideDestinationAddress(txtRideDestination.getText().toString());
         destinationRequest.setRideDestinationState(txtRideStateDestination.getText().toString());
         destinationRequest.setUsername(username);
-
+        destinationRequest.setPhone(phone);
         presenter.onDestinationRequest(destinationRequest);
     }
 

@@ -20,6 +20,15 @@ public class DestinationRequest {
     private String rideDestinationState;
     private String rideDestinationAddress;
     private String username;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getUsername() {
         return username;
@@ -91,6 +100,7 @@ public class DestinationRequest {
         this.rideState = data.getRideState();
         this.rideDestinationState = data.getRideDestinationState();
         this.username = data.getUsername();
+        this.phone = data.getPhone();
     }
 
 }

@@ -120,6 +120,7 @@ public class LoginFragment extends BaseFragment implements HomePresenter.LoginVi
         if (status) {
 
             pref.setUserType(obj.getType());
+            pref.setUserPhone(obj.getPhone());
             pref.setUserLogin("Y");
             pref.setUsername(txtEmail.getText().toString());
 

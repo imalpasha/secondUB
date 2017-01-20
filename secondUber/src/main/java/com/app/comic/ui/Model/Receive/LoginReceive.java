@@ -11,12 +11,23 @@ public class LoginReceive {
     private String status;
     private String message;
     private String type;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
 
     public LoginReceive(LoginReceive data) {
 
         this.status = data.getStatus();
         this.message = data.getMessage();
         this.type = data.getType();
+        this.phone = data.getPhone();
 
     }
 
