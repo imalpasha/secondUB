@@ -23,6 +23,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
@@ -78,6 +79,8 @@
 
 
         <activity android:name=".ui.Activity.DestinationBooking.ListOfRidesActivity"></activity>
+
+        <activity android:name=".ui.Activity.DestinationBooking.DriverProfileActivity"></activity>
 
         <activity android:name=".ui.Activity.Login.LoginActivity"></activity>
 

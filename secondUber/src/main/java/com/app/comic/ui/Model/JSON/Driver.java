@@ -16,6 +16,15 @@ public class Driver{
     private String phone;
     private String smoker;
     private String pref_gender;
+    private String driver_image;
+
+    public String getDriver_image() {
+        return driver_image;
+    }
+
+    public void setDriver_image(String driver_image) {
+        this.driver_image = driver_image;
+    }
 
     public String getStudent_id() {
         return student_id;
