@@ -179,7 +179,7 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
                         @Override
                         public void onClick(SweetAlertDialog sDialog) {
                             Intent intent = new Intent(getActivity(), LoginActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             getActivity().startActivity(intent);
                             getActivity().finish();
                             sDialog.dismiss();

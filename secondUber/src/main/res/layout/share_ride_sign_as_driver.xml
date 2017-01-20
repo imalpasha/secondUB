@@ -16,6 +16,7 @@
         android:paddingRight="20dp" >
 
         <TextView
+            android:id="@+id/txtRegister"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"

@@ -67,7 +67,7 @@
         <activity
             android:name=".ui.Activity.SplashScreen.SplashScreenActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/landingTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

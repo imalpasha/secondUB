@@ -1,17 +1,25 @@
 package com.app.comic.api;
 
 import com.app.comic.ui.Model.Receive.DestinationReceive;
+import com.app.comic.ui.Model.Receive.DriverInfoReceive;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
 import com.app.comic.ui.Model.Receive.LoginReceive;
+import com.app.comic.ui.Model.Receive.PassengerInfoReceive;
 import com.app.comic.ui.Model.Receive.SelectReceive;
 import com.app.comic.ui.Model.Receive.SignDriverReceive;
 import com.app.comic.ui.Model.Receive.SignPassengerReceive;
+import com.app.comic.ui.Model.Receive.UpdateDriverReceive;
+import com.app.comic.ui.Model.Receive.UpdatePassengerReceive;
 import com.app.comic.ui.Model.Request.DestinationRequest;
+import com.app.comic.ui.Model.Request.DriverInfoRequest;
 import com.app.comic.ui.Model.Request.ListRidesRequest;
 import com.app.comic.ui.Model.Request.LoginRequest;
+import com.app.comic.ui.Model.Request.PassengerInfoRequest;
 import com.app.comic.ui.Model.Request.SelectRequest;
 import com.app.comic.ui.Model.Request.SignDriverRequest;
 import com.app.comic.ui.Model.Request.SignPassengerRequest;
+import com.app.comic.ui.Model.Request.UpdateDriverRequest;
+import com.app.comic.ui.Model.Request.UpdatePassengerRequest;
 
 import java.util.Map;
 
@@ -41,6 +49,18 @@ public interface ApiService {
 
     @POST("selectDriver")
     Call<SelectReceive> selectRequest(@Body SelectRequest obj);
+
+    @POST("updatePassenger")
+    Call<UpdatePassengerReceive> updatePassenger(@Body UpdatePassengerRequest obj);
+
+    @POST("updateDriver")
+    Call<UpdateDriverReceive> updateDriver(@Body UpdateDriverRequest obj);
+
+    @POST("getPassenger")
+    Call<PassengerInfoReceive> getPassenger(@Body PassengerInfoRequest obj);
+
+    @POST("getDriver")
+    Call<DriverInfoReceive> getDriver(@Body DriverInfoRequest obj);
 
     //void onComicRequest(@QueryMap Map<String, String> params, Callback<ComicReceive> callback);
 

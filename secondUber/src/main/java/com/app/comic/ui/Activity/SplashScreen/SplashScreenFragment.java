@@ -17,6 +17,8 @@ import com.app.comic.ui.Presenter.HomePresenter;
 import com.app.comic.utils.SharedPrefManager;
 
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
@@ -52,13 +54,15 @@ public class SplashScreenFragment extends BaseFragment implements HomePresenter.
 
         View view = inflater.inflate(R.layout.splash_screen, container, false);
         ButterKnife.inject(this, view);
+        pref = new SharedPrefManager(getActivity());
 
-        Boolean login = false;
-        if (login) {
+        HashMap<String, String> init = pref.getUserLogin();
+        String loginStatus = init.get(SharedPrefManager.USER_LOGIN);
+
+        if (loginStatus != null && loginStatus.equals("Y")) {
             Intent intent = new Intent(act, HomeActivity.class);
             act.startActivity(intent);
             act.finish();
-
         } else {
             Intent intent = new Intent(act, LoginActivity.class);
             act.startActivity(intent);

@@ -26,12 +26,14 @@ import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import io.realm.RealmObject;
 
 
 public class LoginFragment extends BaseFragment implements HomePresenter.LoginView, Validator.ValidationListener {
@@ -84,6 +86,8 @@ public class LoginFragment extends BaseFragment implements HomePresenter.LoginVi
         ButterKnife.inject(this, view);
         pref = new SharedPrefManager(getActivity());
 
+
+
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,6 +120,10 @@ public class LoginFragment extends BaseFragment implements HomePresenter.LoginVi
         if (status) {
 
             pref.setUserType(obj.getType());
+            pref.setUserLogin("Y");
+            pref.setUsername(txtEmail.getText().toString());
+
+            Log.e("USERNAME",txtEmail.getText().toString());
 
             Intent intent = new Intent(getActivity(), HomeActivity.class);
             getActivity().startActivity(intent);

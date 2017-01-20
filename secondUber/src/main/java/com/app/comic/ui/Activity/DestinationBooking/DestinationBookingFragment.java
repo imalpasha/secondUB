@@ -28,6 +28,7 @@ import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -65,7 +66,6 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
     @InjectView(R.id.btnContinue)
     Button btnContinue;
 
-
     // Validator Attributes
     SharedPrefManager pref;
     Activity act;
@@ -98,6 +98,7 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
 
         View view = inflater.inflate(R.layout.share_ride_destination, container, false);
         ButterKnife.inject(this, view);
+        pref = new SharedPrefManager(getActivity());
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,16 +142,20 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
     @Override
     public void onValidationSucceeded() {
 
+        //check user type
+        HashMap<String, String> init2 = pref.getUsername();
+        String username = init2.get(SharedPrefManager.USER_NAME);
+
         initiateLoading(getActivity());
         DestinationRequest destinationRequest = new DestinationRequest();
         destinationRequest.setRideAddress(txtRideAddress.getText().toString());
-        destinationRequest.setRideState(txtRideState.getTag().toString());
+        destinationRequest.setRideState(txtRideState.getText().toString());
         destinationRequest.setRideDate(txtRideDate.getText().toString());
         destinationRequest.setRideTime(txtRideTime.getText().toString());
 
         destinationRequest.setRideDestinationAddress(txtRideDestination.getText().toString());
-        destinationRequest.setRideDestinationState(txtRideStateDestination.getTag().toString());
-        destinationRequest.setUsername("username");
+        destinationRequest.setRideDestinationState(txtRideStateDestination.getText().toString());
+        destinationRequest.setUsername(username);
 
         presenter.onDestinationRequest(destinationRequest);
     }

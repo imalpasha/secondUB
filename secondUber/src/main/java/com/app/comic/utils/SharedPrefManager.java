@@ -12,6 +12,9 @@ public class SharedPrefManager {
 
     public static final String USER_TYPE = "UT";
     public static final String LANGUAGE_CODE = "en";
+    public static final String USER_LOGIN = "en";
+    public static final String USER_NAME = "UN";
+
 
 
     int PRIVATE_MODE = 0;
@@ -26,10 +29,34 @@ public class SharedPrefManager {
     }
 
 
+    public HashMap<String, String> getUsername() {
+        HashMap<String, String> init = new HashMap<String, String>();
+        init.put(USER_NAME, _sharedPrefs.getString(USER_NAME, null));
+        return init;
+    }
+
     public HashMap<String, String> getUserType() {
         HashMap<String, String> init = new HashMap<String, String>();
         init.put(USER_TYPE, _sharedPrefs.getString(USER_TYPE, null));
         return init;
+    }
+
+    public HashMap<String, String> getUserLogin() {
+        HashMap<String, String> init = new HashMap<String, String>();
+        init.put(USER_LOGIN, _sharedPrefs.getString(USER_LOGIN, null));
+        return init;
+    }
+
+    /*ForceLogout*/
+    public void setUsername(String data) {
+        _prefsEditor.putString(USER_NAME, data);
+        _prefsEditor.apply();
+    }
+
+    /*ForceLogout*/
+    public void setUserLogin(String login) {
+        _prefsEditor.putString(USER_LOGIN, login);
+        _prefsEditor.apply();
     }
 
     /*ForceLogout*/

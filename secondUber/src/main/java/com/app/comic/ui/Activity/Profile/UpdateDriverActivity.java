@@ -22,11 +22,13 @@ public class UpdateDriverActivity extends MainFragmentActivity implements Fragme
         super.onCreate(savedInstanceState);
         ButterKnife.inject(this);
 
+        Bundle bundle = getIntent().getExtras();
+
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_content, UpdateDriverFragment.newInstance()).commit();
+        fragmentManager.beginTransaction().replace(R.id.main_content, UpdateDriverFragment.newInstance(bundle)).commit();
 
         setTitle("Driver Profile");
-
+        setBackButton();
         // [END shared_tracker]
 
     }

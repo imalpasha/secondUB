@@ -7,17 +7,25 @@ import android.util.Log;
 import com.app.comic.MainFragmentActivity;
 import com.app.comic.base.BaseFragment;
 import com.app.comic.ui.Model.Receive.DestinationReceive;
+import com.app.comic.ui.Model.Receive.DriverInfoReceive;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
 import com.app.comic.ui.Model.Receive.LoginReceive;
+import com.app.comic.ui.Model.Receive.PassengerInfoReceive;
 import com.app.comic.ui.Model.Receive.SelectReceive;
 import com.app.comic.ui.Model.Receive.SignDriverReceive;
 import com.app.comic.ui.Model.Receive.SignPassengerReceive;
+import com.app.comic.ui.Model.Receive.UpdateDriverReceive;
+import com.app.comic.ui.Model.Receive.UpdatePassengerReceive;
 import com.app.comic.ui.Model.Request.DestinationRequest;
+import com.app.comic.ui.Model.Request.DriverInfoRequest;
 import com.app.comic.ui.Model.Request.ListRidesRequest;
 import com.app.comic.ui.Model.Request.LoginRequest;
+import com.app.comic.ui.Model.Request.PassengerInfoRequest;
 import com.app.comic.ui.Model.Request.SelectRequest;
 import com.app.comic.ui.Model.Request.SignDriverRequest;
 import com.app.comic.ui.Model.Request.SignPassengerRequest;
+import com.app.comic.ui.Model.Request.UpdateDriverRequest;
+import com.app.comic.ui.Model.Request.UpdatePassengerRequest;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
@@ -62,38 +70,137 @@ public class ApiRequestHandler {
         apiService2 = retrofit.create(ApiService.class);
     }
 
-    /*OkHttpClient okClient = new OkHttpClient();
-    okClient.interceptors().add(new Interceptor() {
-        @Override
-        public Response intercept(Interceptor.Chain chain) throws IOException {
-            // if we needed to refresh oAuth tokens, this is where it would happen
-
-            Request original = chain.request();
-            // Customize the request
-            Request request = original.newBuilder()
-                    .header("Accept", "application/json")
-                    .header("Authorization", "auth-token")
-                    .method(original.method(), original.body())
-                    .build();
-
-            Response response = chain.proceed(request); // currently does nothing
-            return response;
-        }
-    });*/
 
 
-    // ------------------------------------------------------------------------------ //
+    @Subscribe
+    public void onPassengerInfoRequest(final DriverInfoRequest event) {
+        Log.e("Request getPassenger", "Handler");
 
-
-        /*OkHttpClient okClient = new OkHttpClient();
-        okClient.interceptors().add(new Interceptor() {
+        Call<DriverInfoReceive> call = apiService2.getDriver(event);
+        call.enqueue(new Callback<DriverInfoReceive>() {
             @Override
-            public Response intercept(Interceptor.Chain chain) throws IOException {
-                // if we needed to refresh oAuth tokens, this is where it would happen
-                Response response = chain.proceed(chain.request()); // currently does nothing
-                return response;
+            public void onResponse(Call<DriverInfoReceive> call, Response<DriverInfoReceive> response) {
+                // response.isSuccessful() is true if the response code is 2xx
+                if (response.isSuccessful()) {
+                    int statusCode = response.code();
+                    DriverInfoReceive user = response.body();
+                    bus.post(new DriverInfoReceive(user));
+                    Log.e("Failed", Integer.toString(statusCode));
+                } else {
+                    int statusCode = response.code();
+                    // handle request errors yourself
+                    ResponseBody errorBody = response.errorBody();
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+                }
             }
-        });*/
+
+            @Override
+            public void onFailure(Call<DriverInfoReceive> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+            }
+        });
+    }
+
+
+    @Subscribe
+    public void onPassengerInfoRequest(final PassengerInfoRequest event) {
+        Log.e("Request getPassenger", "Handler");
+
+        Call<PassengerInfoReceive> call = apiService2.getPassenger(event);
+        call.enqueue(new Callback<PassengerInfoReceive>() {
+            @Override
+            public void onResponse(Call<PassengerInfoReceive> call, Response<PassengerInfoReceive> response) {
+                // response.isSuccessful() is true if the response code is 2xx
+                if (response.isSuccessful()) {
+                    int statusCode = response.code();
+                    PassengerInfoReceive user = response.body();
+                    bus.post(new PassengerInfoReceive(user));
+                    Log.e("Failed", Integer.toString(statusCode));
+                } else {
+                    int statusCode = response.code();
+                    // handle request errors yourself
+                    ResponseBody errorBody = response.errorBody();
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PassengerInfoReceive> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+            }
+        });
+    }
+
+    @Subscribe
+    public void onUpdateDriver(final UpdateDriverRequest event) {
+        Log.e("Request Handle", "Handler");
+
+        Call<UpdateDriverReceive> call = apiService2.updateDriver(event);
+        call.enqueue(new Callback<UpdateDriverReceive>() {
+            @Override
+            public void onResponse(Call<UpdateDriverReceive> call, Response<UpdateDriverReceive> response) {
+                // response.isSuccessful() is true if the response code is 2xx
+                if (response.isSuccessful()) {
+                    int statusCode = response.code();
+                    UpdateDriverReceive user = response.body();
+                    bus.post(new UpdateDriverReceive(user));
+                    Log.e("Failed", Integer.toString(statusCode));
+                } else {
+                    int statusCode = response.code();
+                    // handle request errors yourself
+                    ResponseBody errorBody = response.errorBody();
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UpdateDriverReceive> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+            }
+        });
+    }
+
+
+    @Subscribe
+    public void onUpdatePassenger(final UpdatePassengerRequest event) {
+        Log.e("Request Handle", "Handler");
+
+        Call<UpdatePassengerReceive> call = apiService2.updatePassenger(event);
+        call.enqueue(new Callback<UpdatePassengerReceive>() {
+            @Override
+            public void onResponse(Call<UpdatePassengerReceive> call, Response<UpdatePassengerReceive> response) {
+                // response.isSuccessful() is true if the response code is 2xx
+                if (response.isSuccessful()) {
+                    int statusCode = response.code();
+                    UpdatePassengerReceive user = response.body();
+                    bus.post(new UpdatePassengerReceive(user));
+                    Log.e("Failed", Integer.toString(statusCode));
+                } else {
+                    int statusCode = response.code();
+                    // handle request errors yourself
+                    ResponseBody errorBody = response.errorBody();
+                    BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UpdatePassengerReceive> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                BaseFragment.setAlertNotification(MainFragmentActivity.getContext(), "Unable to connect to server");
+
+            }
+        });
+    }
 
     @Subscribe
     public void onListRidesRequest(final ListRidesRequest event) {

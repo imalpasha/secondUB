@@ -22,11 +22,13 @@ public class UpdatePassengerActivity extends MainFragmentActivity implements Fra
         super.onCreate(savedInstanceState);
         ButterKnife.inject(this);
 
+        Bundle bundle = getIntent().getExtras();
+
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_content, UpdatePassengerFragment.newInstance()).commit();
+        fragmentManager.beginTransaction().replace(R.id.main_content, UpdatePassengerFragment.newInstance(bundle)).commit();
 
-        setTitle("Driver Profile");
-
+        setTitle("Passenger Profile");
+        setBackButton();
         // [END shared_tracker]
 
     }
