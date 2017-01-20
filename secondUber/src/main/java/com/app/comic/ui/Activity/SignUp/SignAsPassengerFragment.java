@@ -68,7 +68,6 @@ public class SignAsPassengerFragment extends BaseFragment implements Validator.V
     @InjectView(R.id.txtSmoker)
     TextView txtSmoker;
 
-
     private Validator mValidator;
     private ArrayList<DropDownItem> purposeList = new ArrayList<DropDownItem>();
     View view;

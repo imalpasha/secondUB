@@ -24,10 +24,12 @@ import com.app.comic.ui.Module.LoginModule;
 import com.app.comic.ui.Presenter.HomePresenter;
 import com.app.comic.ui.Realm.RealmObjectController;
 import com.app.comic.utils.SharedPrefManager;
+import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -37,7 +39,7 @@ import butterknife.InjectView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class DestinationBookingFragment extends BaseFragment implements HomePresenter.DestinationView, Validator.ValidationListener {
+public class DestinationBookingFragment extends BaseFragment implements DatePickerDialog.OnDateSetListener, HomePresenter.DestinationView, Validator.ValidationListener {
 
     @Inject
     HomePresenter presenter;
@@ -71,6 +73,11 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
     Activity act;
     Validator mValidator;
 
+    private Calendar calendar;
+    private String fullDate;
+    public static final String DATEPICKER_TAG = "datepicker";
+
+    final DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
     public static DestinationBookingFragment newInstance() {
 
@@ -98,6 +105,19 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
 
         View view = inflater.inflate(R.layout.share_ride_destination, container, false);
         ButterKnife.inject(this, view);
+
+        calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+
+        txtRideDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.setYearRange(year - 80, year);
+                if(checkFragmentAdded()){
+                    datePickerDialog.show(getActivity().getSupportFragmentManager(), DATEPICKER_TAG);
+                }
+            }
+        });
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,7 +165,7 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
         DestinationRequest destinationRequest = new DestinationRequest();
         destinationRequest.setRideAddress(txtRideAddress.getText().toString());
         destinationRequest.setRideState(txtRideState.getTag().toString());
-        destinationRequest.setRideDate(txtRideDate.getText().toString());
+        destinationRequest.setRideDate(fullDate);
         destinationRequest.setRideTime(txtRideTime.getText().toString());
 
         destinationRequest.setRideDestinationAddress(txtRideDestination.getText().toString());
@@ -189,4 +209,25 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
         presenter.onPause();
     }
 
+    @Override
+    public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day) {
+        String monthInAlphabet = getMonthAlphabet(month);
+        txtRideDate.setText(day + " " + monthInAlphabet + " " + year);
+
+        //Reconstruct DOB
+        String varMonth = "";
+        String varDay = "";
+
+        if(month < 10){
+            varMonth = "0";
+        }
+        if(day < 10){
+            varDay = "0";
+        }
+
+        fullDate = year + "-" + varMonth+""+(month+1)+"-"+varDay+""+day;
+        /*int currentYear = calendar.get(Calendar.YEAR);
+        age = currentYear - year;
+        limitAge = age >= 18;*/
+    }
 }
