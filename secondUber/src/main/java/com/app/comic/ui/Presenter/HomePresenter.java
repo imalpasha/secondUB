@@ -221,11 +221,6 @@ public class HomePresenter {
     }
 
     @Subscribe
-    public void onListRidesReceive(SelectReceive event) {
-        listRidesView.onSelectReceive(event);
-    }
-
-    @Subscribe
     public void onDestinationReceive(DestinationReceive event) {
         destinationView.onDestinationReceive(event);
     }

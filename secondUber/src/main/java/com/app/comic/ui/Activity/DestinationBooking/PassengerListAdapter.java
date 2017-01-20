@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.comic.R;
@@ -55,6 +56,14 @@ public class PassengerListAdapter extends BaseAdapter {
         @InjectView(R.id.btnSelectPassenger)
         TextView btnSelectPassenger;
 
+        @InjectView(R.id.txtPhone)
+        TextView txtPhone;
+
+        @InjectView(R.id.btnCall)
+        TextView btnCall;
+
+        @InjectView(R.id.passengerList)
+        LinearLayout passengerList;
 
     }
 
@@ -73,13 +82,21 @@ public class PassengerListAdapter extends BaseAdapter {
 
         //vh.txtUsername.setText(obj.get(position).getBook_name());
         vh.username.setText(obj.get(position).getUsername());
-
+        vh.txtPhone.setText(obj.get(position).getPhone());
         vh.btnSelectPassenger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 frag.selectDriver(obj.get(position).getId());
             }
         });
+
+        vh.btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                frag.callPassenger(obj.get(position).getPhone());
+            }
+        });
+
 
         return view;
 

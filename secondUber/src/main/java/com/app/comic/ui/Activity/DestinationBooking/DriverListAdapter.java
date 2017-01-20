@@ -8,8 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.app.comic.R;
+import com.app.comic.api.ApiEndpoint;
 import com.app.comic.ui.Model.JSON.Driver;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +63,15 @@ public class DriverListAdapter extends BaseAdapter {
         @InjectView(R.id.btnSelectDriver)
         TextView btnSelectDriver;
 
+        @InjectView(R.id.txtPhone)
+        TextView txtPhone;
+
+        @InjectView(R.id.btnCall)
+        TextView btnCall;
+
+        @InjectView(R.id.driverImage)
+        CircularImageView driverImage;
+
     }
 
     @Override
@@ -74,8 +87,16 @@ public class DriverListAdapter extends BaseAdapter {
             vh = (ViewHolder) view.getTag();
         }
 
-        vh.username.setText(obj.get(position).getUsername());
 
+        if (obj.get(position).getDriver_image() != null) {
+            Glide.with(context).load(ApiEndpoint.imagePath()+""+obj.get(position).getDriver_image())
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    //.placeholder(ContextCompat.getDrawable(getActivity(), R.drawable.promo_home))
+                    .into(vh.driverImage);
+        }
+
+        vh.username.setText(obj.get(position).getUsername());
+        vh.txtPhone.setText(obj.get(position).getPhone());
         vh.btnViewDriverProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,11 +104,17 @@ public class DriverListAdapter extends BaseAdapter {
             }
         });
 
-
         vh.btnSelectDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 frag.selectDriver(obj.get(position).getId());
+            }
+        });
+
+        vh.btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                frag.callPassenger(obj.get(position).getPhone());
             }
         });
 

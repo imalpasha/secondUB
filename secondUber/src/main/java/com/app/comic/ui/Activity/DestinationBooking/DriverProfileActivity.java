@@ -28,7 +28,7 @@ public class DriverProfileActivity extends MainFragmentActivity implements Fragm
         fragmentManager.beginTransaction().replace(R.id.main_content, DriverProfileFragment.newInstance(bundle)).commit();
 
         setTitle("Rides");
-
+        setBackButton();
         // [END shared_tracker]
 
     }

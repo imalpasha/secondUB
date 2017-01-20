@@ -2,6 +2,7 @@ package com.app.comic.ui.Activity.DestinationBooking;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -93,17 +94,17 @@ public class ListOfRidesFragment extends BaseFragment implements HomePresenter.L
         if (status) {
 
             //set list
-            if(obj.getPassenger().size() == 0){
+            if (obj.getPassenger().size() == 0) {
                 //display na
-            }else{
-                PassengerListAdapter adapter = new PassengerListAdapter(getActivity(),this, obj.getPassenger());
+            } else {
+                PassengerListAdapter adapter = new PassengerListAdapter(getActivity(), this, obj.getPassenger());
                 passengerList.setAdapter(adapter);
             }
 
-            if(obj.getDriver().size() == 0){
+            if (obj.getDriver().size() == 0) {
                 //display na
-            }else{
-                DriverListAdapter adapter = new DriverListAdapter(getActivity(),this, obj.getDriver());
+            } else {
+                DriverListAdapter adapter = new DriverListAdapter(getActivity(), this, obj.getDriver());
                 driverList.setAdapter(adapter);
             }
 
@@ -136,18 +137,23 @@ public class ListOfRidesFragment extends BaseFragment implements HomePresenter.L
         }
     }
 
-    public void viewDriver(Driver obj){
+
+    public void callPassenger(String phoneNo) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNo));
+        startActivity(intent);
+    }
+
+    public void viewDriver(Driver obj) {
 
         String driverInfo = new Gson().toJson(obj);
 
         Intent intent = new Intent(getActivity(), DriverProfileActivity.class);
         intent.putExtra("DRIVER_INFO", driverInfo);
         getActivity().startActivity(intent);
-        getActivity().finish();
 
     }
 
-    public void selectDriver(String id){
+    public void selectDriver(String id) {
 
         initiateLoading(getActivity());
         SelectRequest selectRequest = new SelectRequest();
@@ -155,6 +161,7 @@ public class ListOfRidesFragment extends BaseFragment implements HomePresenter.L
         selectRequest.setUsername("username");
         presenter.onSelectRequest(selectRequest);
     }
+
     @Override
     public void onResume() {
         super.onResume();
