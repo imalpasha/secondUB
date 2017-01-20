@@ -64,7 +64,7 @@ public class MainController extends BaseFragment {
         pref = new SharedPrefManager(act);
 
         Boolean status = false;
-        if (objStatus.equals("OK") || objStatus.equals("Redirect")) {
+        if (objStatus.equalsIgnoreCase("success") || objStatus.equals("Redirect")) {
             status = true;
 
         } else if (objStatus.equals("Error") || objStatus.equals("error_validation")) {

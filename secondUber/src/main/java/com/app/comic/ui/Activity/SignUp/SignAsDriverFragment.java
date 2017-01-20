@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -37,6 +40,7 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class SignAsDriverFragment extends BaseFragment implements HomePresenter.SignDriverView, Validator.ValidationListener {
@@ -77,6 +81,15 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
     @InjectView(R.id.txtTypeOfCar)
     TextView txtTypeOfCar;
 
+    @InjectView(R.id.radioSex)
+    RadioGroup radioSex;
+
+    @InjectView(R.id.prefRadioSex)
+    RadioGroup prefRadioSex;
+
+    RadioButton radioSexButton;
+    RadioButton prefRadioSexButton;
+
     private SharedPrefManager pref;
     private Validator mValidator;
     private Activity act;
@@ -99,12 +112,17 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
         MainApplication.get(getActivity()).createScopedGraph(new SignDriverModule(this)).inject(this);
         RealmObjectController.clearCachedResult(getActivity());
 
+        // Validator
+        mValidator = new Validator(this);
+        mValidator.setValidationListener(this);
+        mValidator.setValidationMode(Validator.Mode.BURST);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-         view = inflater.inflate(R.layout.share_ride_sign_as_driver, container, false);
+        view = inflater.inflate(R.layout.share_ride_sign_as_driver, container, false);
         ButterKnife.inject(this, view);
 
         purposeList = getSmoker(act);
@@ -138,6 +156,7 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
             @Override
             public void onClick(View view) {
 
+                hideKeyboard();
                 mValidator.validate();
 
             }
@@ -153,22 +172,41 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
 
         Boolean status = MainController.getRequestStatus(obj.getStatus(), obj.getMessage(), getActivity());
         if (status) {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            getActivity().startActivity(intent);
-            getActivity().finish();
+            new SweetAlertDialog(act, SweetAlertDialog.SUCCESS_TYPE)
+                    .setTitleText("Success!")
+                    .setContentText("Successfully registered!")
+                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            Intent intent = new Intent(getActivity(), LoginActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            getActivity().startActivity(intent);
+                            getActivity().finish();
+                            sDialog.dismiss();
+                        }
+                    })
+                    .show();
         }
     }
 
     @Override
     public void onValidationSucceeded() {
 
+        int selectedId = radioSex.getCheckedRadioButtonId();
+        int prefSelectedId = prefRadioSex.getCheckedRadioButtonId();
+
+        radioSexButton = (RadioButton) view.findViewById(selectedId);
+        prefRadioSexButton = (RadioButton) view.findViewById(prefSelectedId);
+
+        initiateLoading(getActivity());
+
         /* Validation Success - Start send data to server */
         SignDriverRequest signDriverRequest = new SignDriverRequest();
         signDriverRequest.setUsername(txtUsername.getText().toString());
-        signDriverRequest.setGender("Male");
+        signDriverRequest.setGender(radioSexButton.getText().toString());
         signDriverRequest.setPassword(txtPassword.getText().toString());
         signDriverRequest.setPhone(txtPhoneNumber.getText().toString());
-        signDriverRequest.setPrefGender("Male");
+        signDriverRequest.setPrefGender(prefRadioSexButton.getText().toString());
         signDriverRequest.setSmoker(txtSmoker.getTag().toString());
         signDriverRequest.setStudentID(txtStudentID.getText().toString());
         signDriverRequest.setPlatNumber(txtPlatNumber.getText().toString());
@@ -176,6 +214,11 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
         signDriverRequest.setCarType(txtTypeOfCar.getTag().toString());
         presenter.onSignDriverRequest(signDriverRequest);
 
+    }
+
+    public void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
     }
 
     @Override

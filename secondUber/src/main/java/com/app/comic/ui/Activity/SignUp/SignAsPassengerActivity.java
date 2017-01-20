@@ -27,7 +27,7 @@ public class SignAsPassengerActivity extends MainFragmentActivity implements Fra
         fragmentManager.beginTransaction().replace(R.id.main_content, SignAsPassengerFragment.newInstance()).commit();
 
         setTitle("Sign Up");
-
+        setBackButton();
         // [END shared_tracker]
 
     }

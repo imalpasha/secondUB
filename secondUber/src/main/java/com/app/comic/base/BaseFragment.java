@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.app.comic.Controller;
 import com.app.comic.R;
 //import com.fly.firefly.ui.adapter.CheckInPassengerListAdapter;
 import com.app.comic.utils.DropDownItem;
@@ -73,6 +74,16 @@ public class BaseFragment extends Fragment {
     /* COMIC */
 
     static MediaPlayer backgroundMP;
+
+    public static void setAlertNotification(Activity act,String message) {
+
+        dismissLoading();
+        if (Controller.connectionAvailable(act)) {
+            setAlertDialog(act, message, "Error");
+        } else {
+            setAlertDialog(act, "No Internet Connection", "Connection Error");
+        }
+    }
 
     public static void setPushNotificationAlert(Activity act, String message, String title) {
 
@@ -873,7 +884,7 @@ public class BaseFragment extends Fragment {
             int purposeTag = i + 1;
             DropDownItem itemPurpose = new DropDownItem();
             itemPurpose.setText(purpose[i]);
-            itemPurpose.setCode(Integer.toString(purposeTag));
+            itemPurpose.setCode(purpose[i]);
             purposeList.add(itemPurpose);
         }
 
@@ -890,7 +901,7 @@ public class BaseFragment extends Fragment {
             int purposeTag = i + 1;
             DropDownItem itemPurpose = new DropDownItem();
             itemPurpose.setText(purpose[i]);
-            itemPurpose.setCode(Integer.toString(purposeTag));
+            itemPurpose.setCode(purpose[i]);
             purposeList.add(itemPurpose);
         }
 
@@ -907,7 +918,7 @@ public class BaseFragment extends Fragment {
             int purposeTag = i + 1;
             DropDownItem itemPurpose = new DropDownItem();
             itemPurpose.setText(purpose[i]);
-            itemPurpose.setCode(Integer.toString(purposeTag));
+            itemPurpose.setCode(purpose[i]);
             purposeList.add(itemPurpose);
         }
 

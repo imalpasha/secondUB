@@ -46,7 +46,6 @@ public class LoginFragment extends BaseFragment implements HomePresenter.LoginVi
     Button btnLogin;
 
     @NotEmpty(sequence = 1, messageResId = R.string.email_empty)
-    @Email
     @InjectView(R.id.txtEmail)
     EditText txtEmail;
 
