@@ -16,6 +16,7 @@ public class UpdateDriverRequest {
     String platNumber;
     String carType;
     String licenseNumber;
+    String driverImage;
 
     public String getPlatNumber() {
         return platNumber;
@@ -97,6 +98,13 @@ public class UpdateDriverRequest {
         this.prefGender = prefGender;
     }
 
+    public String getDriverImage() {
+        return driverImage;
+    }
+
+    public void setDriverImage(String driverImage) {
+        this.driverImage = driverImage;
+    }
 
     /*Initiate Class*/
     public UpdateDriverRequest() {
@@ -114,8 +122,8 @@ public class UpdateDriverRequest {
         this.carType = data.getCarType();
         this.platNumber = data.getPlatNumber();
         this.licenseNumber = data.getLicenseNumber();
+        this.driverImage = data.getDriverImage();
 
     }
-
 
 }

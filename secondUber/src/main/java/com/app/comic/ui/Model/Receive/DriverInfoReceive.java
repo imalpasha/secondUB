@@ -35,6 +35,18 @@ public class DriverInfoReceive {
 
     public class Driver {
 
+        private String student_id;
+        private String id;
+        private String username;
+        private String gender;
+        private String phone;
+        private String smoker;
+        private String pref_gender;
+        private String license_number;
+        private String plat_number;
+        private String car_type;
+        private String driver_image;
+
         public String getStudent_id() {
             return student_id;
         }
@@ -91,16 +103,13 @@ public class DriverInfoReceive {
             this.pref_gender = pref_gender;
         }
 
-        private String student_id;
-        private String id;
-        private String username;
-        private String gender;
-        private String phone;
-        private String smoker;
-        private String pref_gender;
-        private String license_number;
-        private String plat_number;
-        private String car_type;
+        public String getDriver_image() {
+            return driver_image;
+        }
+
+        public void setDriver_image(String driver_image) {
+            this.driver_image = driver_image;
+        }
 
         public String getLicense_number() {
             return license_number;
@@ -126,11 +135,9 @@ public class DriverInfoReceive {
             this.car_type = car_type;
         }
 
-
     }
 
     public DriverInfoReceive(DriverInfoReceive data) {
-
 
         this.message = data.getMessage();
         this.status = data.getStatus();
