@@ -79,7 +79,7 @@
         </LinearLayout>
 
 
-        <EditText
+        <TextView
             android:id="@+id/txtRideDate"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,6 @@
             android:layout_marginTop="8dp"
             android:background="@color/grey"
             android:hint="Date"
-            android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/input_login"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,12 +24,16 @@ import com.app.comic.ui.Module.DestinationModule;
 import com.app.comic.ui.Module.LoginModule;
 import com.app.comic.ui.Presenter.HomePresenter;
 import com.app.comic.ui.Realm.RealmObjectController;
+import com.app.comic.utils.DropDownItem;
 import com.app.comic.utils.SharedPrefManager;
+import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -38,7 +43,7 @@ import butterknife.InjectView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class DestinationBookingFragment extends BaseFragment implements HomePresenter.DestinationView, Validator.ValidationListener {
+public class DestinationBookingFragment extends BaseFragment implements DatePickerDialog.OnDateSetListener, HomePresenter.DestinationView, Validator.ValidationListener {
 
     @Inject
     HomePresenter presenter;
@@ -71,6 +76,14 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
     Activity act;
     Validator mValidator;
 
+    final Calendar calendar = Calendar.getInstance();
+    String fullDate;
+    static final String DATEPICKER_TAG = "datepicker";
+    ArrayList<DropDownItem> originList = new ArrayList<DropDownItem>();
+    ArrayList<DropDownItem> destinationList = new ArrayList<DropDownItem>();
+    View view;
+
+    final DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
     public static DestinationBookingFragment newInstance() {
 
@@ -96,14 +109,55 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.share_ride_destination, container, false);
+        view = inflater.inflate(R.layout.share_ride_destination, container, false);
         ButterKnife.inject(this, view);
         pref = new SharedPrefManager(getActivity());
+
+        final int year = calendar.get(Calendar.YEAR);
+
+        originList = getState(act);
+        destinationList = getState(act);
+
+        txtRideState.setText(originList.get(0).getText());
+        txtRideState.setTag(originList.get(0).getCode());
+
+        txtRideStateDestination.setText(destinationList.get(0).getText());
+        txtRideStateDestination.setTag(destinationList.get(0).getCode());
+
+        txtRideState.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
+                popupSelection(originList, getActivity(), txtRideState, true, view);
+            }
+        });
+
+        txtRideStateDestination.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
+                popupSelection(destinationList, getActivity(), txtRideStateDestination, true, view);
+            }
+        });
+
+
+        txtRideDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.setYearRange(year - 80, year);
+                if (checkFragmentAdded()) {
+                    datePickerDialog.show(getActivity().getSupportFragmentManager(), DATEPICKER_TAG);
+                }
+            }
+        });
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                hideKeyboard();
                 mValidator.validate();
                 /*Intent intent = new Intent(getActivity(), HomeActivity.class);
                 getActivity().startActivity(intent);
@@ -150,15 +204,20 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
         DestinationRequest destinationRequest = new DestinationRequest();
         destinationRequest.setRideAddress(txtRideAddress.getText().toString());
         destinationRequest.setRideState(txtRideState.getText().toString());
-        destinationRequest.setRideDate(txtRideDate.getText().toString());
+        destinationRequest.setRideDate(fullDate);
         destinationRequest.setRideTime(txtRideTime.getText().toString());
-
         destinationRequest.setRideDestinationAddress(txtRideDestination.getText().toString());
         destinationRequest.setRideDestinationState(txtRideStateDestination.getText().toString());
         destinationRequest.setUsername(username);
 
         presenter.onDestinationRequest(destinationRequest);
     }
+
+    public void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+    }
+
 
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
@@ -194,4 +253,25 @@ public class DestinationBookingFragment extends BaseFragment implements HomePres
         presenter.onPause();
     }
 
+    @Override
+    public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day) {
+        String monthInAlphabet = getMonthAlphabet(month);
+        txtRideDate.setText(day + " " + monthInAlphabet + " " + year);
+
+        //Reconstruct DOB
+        String varMonth = "";
+        String varDay = "";
+
+        if (month < 10) {
+            varMonth = "0";
+        }
+        if (day < 10) {
+            varDay = "0";
+        }
+
+        fullDate = year + "-" + varMonth + "" + (month + 1) + "-" + varDay + "" + day;
+        /*int currentYear = calendar.get(Calendar.YEAR);
+        age = currentYear - year;
+        limitAge = age >= 18;*/
+    }
 }

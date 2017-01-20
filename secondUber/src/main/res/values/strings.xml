@@ -1,7 +1,7 @@
 <resources>
 
 
-    <string name="app_name">JualBeli</string>
+    <string name="app_name">Share n Ride</string>
 
     <!-- Home Exit Notification -->
     <string name="home_exit">EXIT</string>

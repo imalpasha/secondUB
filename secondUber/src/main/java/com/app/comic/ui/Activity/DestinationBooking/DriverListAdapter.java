@@ -50,8 +50,8 @@ public class DriverListAdapter extends BaseAdapter {
 
     static class ViewHolder {
 
-        @InjectView(R.id.txtUsername)
-        TextView txtUsername;
+        @InjectView(R.id.username)
+        TextView username;
 
         @InjectView(R.id.btnViewDriverProfile)
         TextView btnViewDriverProfile;
@@ -74,7 +74,7 @@ public class DriverListAdapter extends BaseAdapter {
             vh = (ViewHolder) view.getTag();
         }
 
-        vh.txtUsername.setText("Username");
+        vh.username.setText(obj.get(position).getUsername());
 
         vh.btnViewDriverProfile.setOnClickListener(new View.OnClickListener() {
             @Override

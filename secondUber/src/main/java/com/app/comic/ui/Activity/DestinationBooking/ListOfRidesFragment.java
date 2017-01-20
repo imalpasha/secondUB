@@ -27,6 +27,8 @@ import com.app.comic.utils.SharedPrefManager;
 import com.google.gson.Gson;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
@@ -69,11 +71,16 @@ public class ListOfRidesFragment extends BaseFragment implements HomePresenter.L
 
         View view = inflater.inflate(R.layout.share_ride_list, container, false);
         ButterKnife.inject(this, view);
+        pref = new SharedPrefManager(getActivity());
+
+        //check user type
+        HashMap<String, String> init2 = pref.getUsername();
+        String username = init2.get(SharedPrefManager.USER_NAME);
 
         //LOAD LIST
         initiateLoading(getActivity());
         ListRidesRequest listRidesRequest = new ListRidesRequest();
-        listRidesRequest.setUsername("username");
+        listRidesRequest.setUsername(username);
         presenter.onListRequest(listRidesRequest);
         return view;
     }

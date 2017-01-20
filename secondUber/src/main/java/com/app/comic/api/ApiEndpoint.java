@@ -16,7 +16,6 @@ public class ApiEndpoint{
         return "http://192.168.0.167/share_ride/public/book_image/";
     }
 
-
     // @Override
     public String getName() {
         return "Production Endpoint";

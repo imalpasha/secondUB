@@ -49,8 +49,8 @@ public class PassengerListAdapter extends BaseAdapter {
 
     static class ViewHolder {
 
-        @InjectView(R.id.txtUsername)
-        TextView txtUsername;
+        @InjectView(R.id.username)
+        TextView username;
 
         @InjectView(R.id.btnSelectPassenger)
         TextView btnSelectPassenger;
@@ -72,7 +72,7 @@ public class PassengerListAdapter extends BaseAdapter {
         }
 
         //vh.txtUsername.setText(obj.get(position).getBook_name());
-        vh.txtUsername.setText("Username");
+        vh.username.setText(obj.get(position).getUsername());
 
         vh.btnSelectPassenger.setOnClickListener(new View.OnClickListener() {
             @Override

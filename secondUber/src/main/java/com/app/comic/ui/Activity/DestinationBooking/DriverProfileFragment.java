@@ -16,6 +16,7 @@ import com.app.comic.application.MainApplication;
 import com.app.comic.base.BaseFragment;
 import com.app.comic.ui.Model.JSON.Driver;
 import com.app.comic.ui.Model.Receive.DestinationReceive;
+import com.app.comic.ui.Model.Receive.DriverInfoReceive;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
 import com.app.comic.ui.Model.Receive.SelectReceive;
 import com.app.comic.ui.Model.Request.ListRidesRequest;
@@ -43,6 +44,39 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
 
     @InjectView(R.id.btnSignUp)
     Button btnSignUp;
+
+    @NotEmpty(sequence = 1, messageResId = R.string.student_id_empty)
+    @InjectView(R.id.txtStudentID)
+    EditText txtStudentID;
+
+    @NotEmpty(sequence = 2, messageResId = R.string.email_empty)
+    @InjectView(R.id.txtUsername)
+    EditText txtUsername;
+
+    @NotEmpty(sequence = 3, messageResId = R.string.password_empty)
+    @InjectView(R.id.txtPassword)
+    EditText txtPassword;
+
+    @NotEmpty(sequence = 4, messageResId = R.string.phone_empty)
+    @InjectView(R.id.txtPhoneNumber)
+    EditText txtPhoneNumber;
+
+    @InjectView(R.id.txtSmoker)
+    TextView txtSmoker;
+
+    @NotEmpty(sequence = 4, messageResId = R.string.phone_empty)
+    @InjectView(R.id.txtPlatNumber)
+    EditText txtPlatNumber;
+
+    @NotEmpty(sequence = 4, messageResId = R.string.phone_empty)
+    @InjectView(R.id.txtLicenseNumber)
+    EditText txtLicenseNumber;
+
+    @InjectView(R.id.txtTypeOfCar)
+    TextView txtTypeOfCar;
+
+    @InjectView(R.id.txtRegister)
+    TextView txtRegister;
 
     // Validator Attributes
     SharedPrefManager pref;
@@ -76,6 +110,10 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         Gson book = new Gson();
         driver = book.fromJson(driverInfo, Driver.class);
 
+        txtPassword.setVisibility(View.GONE);
+        txtUsername.setEnabled(false);
+        setData(driver);
+
         btnSignUp.setText("Select");
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +128,18 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
             }
         });
         return view;
+    }
+
+    public void setData(Driver obj) {
+
+        txtUsername.setText(obj.getUsername());
+        txtPhoneNumber.setText(obj.getPhone());
+        txtSmoker.setText(obj.getSmoker());
+        txtStudentID.setText(obj.getStudent_id());
+        txtPlatNumber.setText(obj.getPlat_number());
+        txtLicenseNumber.setText(obj.getLicense_number());
+        txtTypeOfCar.setText(obj.getCar_type());
+
     }
 
     @Override

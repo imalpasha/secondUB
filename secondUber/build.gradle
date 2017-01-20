@@ -95,7 +95,7 @@ dependencies {
     compile 'com.scottyab:aescrypt:0.0.1'
 
     //Datepicker
-    // compile 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
+    compile 'com.github.flavienlaurent.datetimepicker:library:0.0.2'
 
     //compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
     //    transitive = true;

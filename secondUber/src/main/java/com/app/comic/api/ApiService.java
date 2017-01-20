@@ -41,7 +41,7 @@ public interface ApiService {
     @POST("registerDriver")
     Call<SignDriverReceive> signDriver(@Body SignDriverRequest obj);
 
-    @POST("registerDriver")
+    @POST("postDestination")
     Call<DestinationReceive> destinationRequest(@Body DestinationRequest obj);
 
     @POST("listRides")

@@ -19,15 +19,32 @@
             android:id="@+id/txtRegister"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:gravity="center"
             android:background="@null"
             android:text="Registration"
             android:textAllCaps="true"
-            android:layout_marginBottom="10dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/driver_addImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@color/grey"
+                android:src="@drawable/add"/>
+
+        </LinearLayout>
+
 
         <EditText
             android:layout_width="fill_parent"
