@@ -1,0 +1,103 @@
+Applications Graphics Acceleration Info:
+Uptime: 3967225 Realtime: 4820802
+
+** Graphics info for pid 25700 [com.fly.firefly] **
+
+Recent DisplayList operations
+DrawRoundRect
+DrawOval
+DrawRoundRect
+DrawText
+DrawText
+DrawText
+DrawDisplayList
+  DrawDisplayList
+    DrawDisplayList
+      DrawRoundRect
+      Save
+      ClipRect
+      DrawDisplayList
+        DrawDisplayList
+          DrawOval
+          DrawOval
+        DrawDisplayList
+          Save
+          ConcatMatrix
+          DrawRoundRect
+          DrawOval
+          RestoreToCount
+      DrawDisplayList
+        Save
+        ClipRect
+        DrawText
+        RestoreToCount
+      DrawDisplayList
+        Save
+        ClipRect
+        DrawText
+        RestoreToCount
+      DrawDisplayList
+        DrawDisplayList
+          DrawRoundRect
+          Save
+          ClipRect
+          Translate
+          DrawText
+          RestoreToCount
+      RestoreToCount
+DrawRoundRect
+DrawOval
+DrawOval
+DrawRoundRect
+DrawOval
+DrawRoundRect
+DrawText
+DrawText
+DrawText
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache         14838048 / 25165824
+  LayerCache             983040 / 16777216
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TextDropShadowCache         0 /  2097152
+  PatchCache              17472 /   131072
+  FontRenderer 0 A8      524288 /   524288
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total   524288 /   524288
+Other:
+  FboCache                    2 /       16
+Total memory usage:
+  16362848 bytes, 15.60 MB
+
+Profile data in ms:
+
+	com.fly.firefly/com.fly.firefly.ui.activity.Homepage.HomeActivity/android.view.ViewRootImpl@42738010
+	com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.SearchFlightActivity/android.view.ViewRootImpl@425df500
+	com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.CodeShareFlightListActivity/android.view.ViewRootImpl@4425c9e0
+	com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.PersonalDetailActivity/android.view.ViewRootImpl@431e4930
+	com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.PersonalDetailActivity/android.view.ViewRootImpl@43426078
+View hierarchy:
+
+  com.fly.firefly/com.fly.firefly.ui.activity.Homepage.HomeActivity/android.view.ViewRootImpl@42738010
+  114 views, 0.00 kB of display lists, 15 frames rendered
+
+  com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.SearchFlightActivity/android.view.ViewRootImpl@425df500
+  144 views, 0.00 kB of display lists, 69 frames rendered
+
+  com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.CodeShareFlightListActivity/android.view.ViewRootImpl@4425c9e0
+  202 views, 0.00 kB of display lists, 111 frames rendered
+
+  com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.PersonalDetailActivity/android.view.ViewRootImpl@431e4930
+  1008 views, 11.54 kB of display lists, 312 frames rendered
+
+  com.fly.firefly/com.fly.firefly.ui.activity.BookingFlight.PersonalDetailActivity/android.view.ViewRootImpl@43426078
+  25 views, 1.58 kB of display lists, 21 frames rendered
+
+
+Total ViewRootImpl: 5
+Total Views:        1493
+Total DisplayList:  13.11 kB
+

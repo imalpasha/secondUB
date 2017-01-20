@@ -1,0 +1,36 @@
+Applications Memory Usage (kB):
+Uptime: 3896240 Realtime: 4749817
+
+** MEMINFO in pid 25700 [com.fly.firefly] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap        0        0        0        0     8408     7777      454
+  Dalvik Heap    31423    31276        0        0    38980    32422     6558
+ Dalvik Other     3706     3660        0        0                           
+        Stack       28       28        0        0                           
+    Other dev        4        0        4        0                           
+     .so mmap     2251     1236      624        0                           
+    .apk mmap      451        0      260        0                           
+    .ttf mmap      452        0      392        0                           
+    .dex mmap     6721       88     5828        0                           
+   Other mmap      161        8      120        0                           
+      Unknown     6341     6340        0        0                           
+        TOTAL    51538    42636     7228        0    47388    40199     7012
+ 
+ Objects
+               Views:     1977         ViewRootImpl:       20
+         AppContexts:        8           Activities:        5
+              Assets:        3        AssetManagers:        3
+       Local Binders:       21        Proxy Binders:       32
+    Death Recipients:        1
+     OpenSSL Sockets:        2
+ 
+ SQL
+         MEMORY_USED:      209
+  PAGECACHE_OVERFLOW:       45          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       40             67         8/21/7  /data/data/com.fly.firefly/databases/google_app_measurement.db
+         4       28             73       101/52/8  /data/data/com.fly.firefly/databases/google_analytics_v4.db

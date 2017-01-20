@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="a7b93064a4cac2a01ebbf506bf217cd9e1d07026">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e89e43b5c6b11878b7096be8d67942eed39f2738\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.scottyab\aescrypt\0.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="439f1fa08fbc88d31ffdb11d80a13211689da6aa">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.scottyab-aescrypt-0.0.1_260f11d5b3d647e1ca8e481c9780b8bcf3b00141\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_ac19cfd3f503c7f902951220a89ec1b5186de27a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.8.0_1be1716ec5dcc99c01aaade81b830c5d69b9f08c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.8.0_0f41f048b20f382d4a1f6b4452a4a7e8a92f9119\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.nispok\snackbar\2.7.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="ae754614a9f77b9afbc83483f82b7accac52703d">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.nispok-snackbar-2.7.5_4fbfad495c3afee4c3fb4327fd580c25bf5f9bf9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="25384e614a2b20d5bb710e8fc3737ef99c194138">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7bdd78f3ec78de2d2abdecffc3379087a2155c84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.8.0_099e7e763b11489c49268c47401196750de8dc16\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_cbadb6be31ff26e7c098e62b9a209e05a2ae1ab9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\javax.inject-1_3cfab0bb006bd1731cec6fcb0a636ed8c21f7093\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\libs\android-query-full.0.26.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="5ab405d9f4eaf5ddd615967cd35650657b758d40">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\2\android-query-full.0.26.8_b80f182becac9bef38f72781958eced3e1006b0d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_dc630040e63120647b5f5c7805d5d2f6a1a7b436\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.8.0_cf730cf866bcebf324e1b3a83adf645134c4620a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\libs\realm-android-0.87.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="97d167507fcf75bc96d2123af0f3b1b5614ca3b7">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\2\realm-android-0.87.4_9dc7a6de44efe241769898dc3d468b9e4f62e764\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.8.0_601b9cf652faa26f4ac6cb40feedb9365cef02a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\pl.droidsonroids.gif\android-gif-drawable\1.1.17\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="7f8c6fd043a9c060badf3fa9b77e51c422af0a8b">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\pl.droidsonroids.gif-android-gif-drawable-1.1.17_3ad0ada0e3e98046798ded7f4f97c734aa8a74c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_abefcb59ba9daa917fb02a1553615f23bb2b69f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_7f0eb4a98497c842767b547a35beb6e417750cfa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.koushikdutta.async\androidasync\2.1.3\52aed89a155265a48984ecc06aa8dec12674edad\androidasync-2.1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="52aed89a155265a48984ecc06aa8dec12674edad">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\androidasync-2.1.3_472636d8d1b8bff72538c6ea6562a7c8722d3cc3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.0_b840cb32ef937152f4e90dd2de12d6d47fb2ebce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_d830fd16d358fff1d1a5b393c3a2f0a2603897a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.dagger\dagger\1.2.2\e8f912ee19ad84958510883ea191135276b091f8\dagger-1.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="e8f912ee19ad84958510883ea191135276b091f8">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\dagger-1.2.2_6aa3097534e61e45ef774ed35706a943ef5b5091\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.2\daf5472b0df6dabaceb6ad755b3812535863965a\butterknife-5.1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="daf5472b0df6dabaceb6ad755b3812535863965a">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-5.1.2_f2725b50d3c2d380b0771318127816fc7d8bd35e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.1\19047bdb6a4fc00a44124f64ca98e88fc204e7e3\okhttp-3.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.1_188cc56f8075b7c8cffff183dab21276148a5f99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_de74d3f21a44dba3a2a11336bb4513239aa1ea2d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.8.0_7005ae360262a027449c2a700ce31d3fa79f8f35\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.github.d-max\spots-dialog\0.4\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="f82b3f786bf4937ed1a1cc9a9a811e154813ba9a">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.d-max-spots-dialog-0.4_f7b26aa0225965e89c4913d304156f58f7254006\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.3.1\99ce730034c6f5aaed710d1e0e9df95e8714ed5f\logging-interceptor-3.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="99ce730034c6f5aaed710d1e0e9df95e8714ed5f">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.3.1_a635a3aba291b5a31e2d13f1aa6cc44390f49286\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.0_4bf9e2e348622674bdf75745cfad78b469b80b4a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\cn.pedant.sweetalert\library\1.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\cn.pedant.sweetalert-library-1.3_ddcb1f7b819b2994366192ce275260430a44421f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_7b1810a2f82d740dd19149fcd92f8e50c8fb42cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.mobsandgeeks\android-saripaar\2.0.3\abd8da523222180f9531768c62509edf6cd9b02e\android-saripaar-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="abd8da523222180f9531768c62509edf6cd9b02e">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\android-saripaar-2.0.3_09bba264928436465ce5eecd31259599deef7cb5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.dev.sacot41\scviewpager\0.0.4\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="4747fb10a7d8577c5df0044df302f2cbfc437aa7">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.dev.sacot41-scviewpager-0.0.4_247e1b08562a0b8b324bf5a5e6ba25f1c25520f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.8.0_ade5598aae3fd842da19f0ece98213c08f97c617\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_c97eb636822e34a964e269032d74c7d912c2ed14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.inthecheesefactory.thecheeselibrary\adjustable-imageview\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="6f4877a9f0a653e193bfb600379e4bfc8472be47">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.inthecheesefactory.thecheeselibrary-adjustable-imageview-1.0.0_3162619c7958c66e9fffc29e8cc1202506a67305\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.koushikdutta.ion\ion\2.1.3\659c4d0a26ab5d857db1440199cef6dd42b4428\ion-2.1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="0659c4d0a26ab5d857db1440199cef6dd42b4428">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\ion-2.1.3_c8a9a041fcbb37f67962c9b443d2959f89d2d65d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\.gradle\caches\modules-2\files-2.1\com.squareup\otto\1.3.8\cf615176cd1177edf71d3c9605f8dc148fede6be\otto-1.3.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="cf615176cd1177edf71d3c9605f8dc148fede6be">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\otto-1.3.8_4e4c49f4abbfb6a314f4373fd1a0c236fd64ecd6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\exploded-aar\com.davemorrissey.labs\subsampling-scale-image-view\3.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.0"
+        sha1="fa7c91f0a2b43f8d9fa001e3d04e2d600f24cc68">
+        <dex dex="C:\Users\Dell\Documents\SecondUber\secondUber\build\intermediates\transforms\dex\debug\folders\1000\10\com.davemorrissey.labs-subsampling-scale-image-view-3.5.0_4508031c0255ed89617c73d34dbf0239e32f8764\classes.dex" />
+    </item>
+
+</items>

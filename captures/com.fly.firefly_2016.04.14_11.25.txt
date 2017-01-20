@@ -1,0 +1,89 @@
+AGGREGATED OVER LAST 24 HOURS:
+Per-Package Stats:
+  * com.fly.firefly / u0a245:
+      * com.fly.firefly / u0a245:
+               TOTAL: 3.5% (34MB-41MB-54MB/32MB-40MB-52MB over 15)
+                 Top: 3.5% (34MB-41MB-54MB/32MB-40MB-52MB over 15)
+            (Cached): 0.00%
+  * com.fly.firefly / u0a246:
+      * com.fly.firefly / u0a246:
+               TOTAL: 0.07% (44MB-44MB-44MB/42MB-42MB-42MB over 1)
+                 Top: 0.07% (44MB-44MB-44MB/42MB-42MB-42MB over 1)
+            (Cached): 0.05%
+  * com.fly.firefly / u0a247:
+      * com.fly.firefly / u0a247:
+               TOTAL: 6.2% (30MB-51MB-120MB/29MB-50MB-117MB over 25)
+                 Top: 6.2% (30MB-51MB-120MB/29MB-50MB-117MB over 25)
+          (Last Act): 3.0% (31MB-61MB-120MB/30MB-59MB-117MB over 3)
+            (Cached): 12% (31MB-108MB-118MB/30MB-105MB-114MB over 9)
+
+Summary:
+  * com.fly.firefly / u0a247:
+           TOTAL: 6.2% (30MB-51MB-120MB/29MB-50MB-117MB over 25)
+             Top: 6.2% (30MB-51MB-120MB/29MB-50MB-117MB over 25)
+      (Last Act): 3.0% (31MB-61MB-120MB/30MB-59MB-117MB over 3)
+        (Cached): 12% (31MB-108MB-118MB/30MB-105MB-114MB over 9)
+  * com.fly.firefly / u0a245:
+           TOTAL: 3.5% (34MB-41MB-54MB/32MB-40MB-52MB over 15)
+             Top: 3.5% (34MB-41MB-54MB/32MB-40MB-52MB over 15)
+        (Cached): 0.00%
+  * com.fly.firefly / u0a246:
+           TOTAL: 0.07% (44MB-44MB-44MB/42MB-42MB-42MB over 1)
+             Top: 0.07% (44MB-44MB-44MB/42MB-42MB-42MB over 1)
+        (Cached): 0.05%
+
+Run time Stats:
+  SOff/Norm: +5h24m4s182ms
+  SOn /Norm: +6h16m50s513ms
+      TOTAL: +11h40m54s695ms
+
+          Start time: 2016-04-13 12:10:00
+  Total elapsed time: +23h11m57s355ms (partial) libdvm.so chromeview
+
+AGGREGATED OVER LAST 3 HOURS:
+Per-Package Stats:
+  * com.fly.firefly / u0a247:
+      * com.fly.firefly / u0a247:
+               TOTAL: 20% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+                 Top: 20% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+          (Last Act): 11% (31MB-31MB-31MB/30MB-30MB-30MB over 2)
+            (Cached): 8.0% (31MB-31MB-31MB/30MB-30MB-30MB over 1)
+
+Summary:
+  * com.fly.firefly / u0a247:
+           TOTAL: 20% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+             Top: 20% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+      (Last Act): 11% (31MB-31MB-31MB/30MB-30MB-30MB over 2)
+        (Cached): 8.0% (31MB-31MB-31MB/30MB-30MB-30MB over 1)
+
+Run time Stats:
+  SOff/Norm: +41m25s694ms
+  SOn /Norm: +1h17m21s571ms
+      TOTAL: +1h58m47s265ms
+
+          Start time: 2016-04-14 05:53:02
+  Total elapsed time: +5h30m58s835ms (partial) libdvm.so chromeview
+
+CURRENT STATS:
+Per-Package Stats:
+  * com.fly.firefly / u0a247:
+      * com.fly.firefly / u0a247:
+               TOTAL: 36% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+                 Top: 36% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+          (Last Act): 19% (31MB-31MB-31MB/30MB-30MB-30MB over 2)
+            (Cached): 15% (31MB-31MB-31MB/30MB-30MB-30MB over 1)
+
+Summary:
+  * com.fly.firefly / u0a247:
+           TOTAL: 36% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+             Top: 36% (31MB-44MB-51MB/30MB-42MB-50MB over 13)
+      (Last Act): 19% (31MB-31MB-31MB/30MB-30MB-30MB over 2)
+        (Cached): 15% (31MB-31MB-31MB/30MB-30MB-30MB over 1)
+
+Run time Stats:
+  SOff/Norm: +15m7s10ms (running)
+  SOn /Norm: +50m24s74ms
+      TOTAL: +1h5m31s84ms
+
+          Start time: 2016-04-14 10:05:20
+  Total elapsed time: +1h19m49s663ms (partial) libdvm.so chromeview

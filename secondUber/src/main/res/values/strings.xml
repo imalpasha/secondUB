@@ -1,0 +1,55 @@
+<resources>
+
+
+    <string name="app_name">JualBeli</string>
+
+    <!-- Home Exit Notification -->
+    <string name="home_exit">EXIT</string>
+    <string name="home_confirm_exit">Confirm exit?</string>
+    <string name="home_cancel">Cancel</string>
+    <string name="home_close">Close</string>
+
+
+    <string name="facebook_app_id">1143272665731321</string>
+
+    <string name="email_empty">Please insert email</string>
+    <string name="password_empty">Please insert password</string>
+    <string name="student_id_empty">Please insert password</string>
+    <string name="phone_empty">Please insert password</string>
+
+    <string-array name="smoker">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="car">
+        <item>alza</item>
+        <item>axia</item>
+        <item>cezza</item>
+        <item>iris</item>
+        <item>kancil</item>
+        <item>kenari</item>
+        <item>myvi</item>
+        <item>pesona</item>
+        <item>saga</item>
+    </string-array>
+
+    <!-- State -->
+    <string-array name="state">
+        <item>Perak</item>
+        <item>Pahang</item>
+        <item>Johor</item>
+        <item>Kedah</item>
+        <item>Penang</item>
+        <item>Selangor</item>
+        <item>Melaka</item>
+        <item>Terengganu</item>
+        <item>Kelantan</item>
+        <item>Kuala Lumpur</item>
+        <item>Negeri Sembilan</item>
+        <item>Sabah</item>
+        <item>Sarawak</item>
+        <item>Perlis</item>
+        <item>Labuan</item>
+    </string-array>
+</resources>
