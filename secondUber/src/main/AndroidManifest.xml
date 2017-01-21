@@ -67,7 +67,7 @@
         <!-- SPLASH SCREEN -->
         <activity
             android:name=".ui.Activity.SplashScreen.SplashScreenActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/landingTheme">
 
             <intent-filter>

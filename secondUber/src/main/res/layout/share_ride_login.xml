@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:background="@color/grey"
-            android:hint="email@gmail.com"
+            android:hint="Matt Tyson"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
