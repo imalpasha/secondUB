@@ -154,12 +154,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type of Car"
-                android:padding="10dp"/>
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:background="@color/grey"
@@ -173,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:textColorHint="@color/input_login_hint"
-                    android:hint="Select one"
+                    android:hint="Type of Car"
                     android:padding="10dp" />
             </LinearLayout>
         </LinearLayout>
@@ -212,12 +206,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Smoker"
-                android:padding="10dp"/>
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:background="@color/grey"
@@ -231,7 +219,7 @@
                     android:background="@null"
                     android:id="@+id/txtSmoker"
                     android:textColorHint="@color/input_login_hint"
-                    android:hint="Select one"
+                    android:hint="Smoker"
                     android:padding="10dp" />
             </LinearLayout>
         </LinearLayout>

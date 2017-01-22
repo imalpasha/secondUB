@@ -9,7 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.comic.R;
+import com.app.comic.api.ApiEndpoint;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +69,9 @@ public class PassengerListAdapter extends BaseAdapter {
         @InjectView(R.id.passengerList)
         LinearLayout passengerList;
 
+        @InjectView(R.id.image_dp)
+        CircularImageView image_dp;
+
     }
 
     @Override
@@ -78,6 +85,15 @@ public class PassengerListAdapter extends BaseAdapter {
             view.setTag(vh);
         } else {
             vh = (ViewHolder) view.getTag();
+        }
+
+        if (obj.get(position).getUser_image() != null) {
+            Glide.with(context).load(ApiEndpoint.imagePath()+""+obj.get(position).getUser_image())
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    //.placeholder(ContextCompat.getDrawable(getActivity(), R.drawable.promo_home))
+                    .into(vh.image_dp);
+        }else{
+            vh.image_dp.setImageResource(R.drawable.no_profile);
         }
 
         //vh.txtUsername.setText(obj.get(position).getBook_name());

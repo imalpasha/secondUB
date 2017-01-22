@@ -2,11 +2,9 @@ package com.app.comic.ui.Model.Receive;
 
 public class PassengerInfoReceive {
 
-
     private String status;
     private String message;
     private Passenger info;
-
 
     public String getStatus() {
         return status;

@@ -103,7 +103,7 @@ public class HomeFragment extends BaseFragment implements HomePresenter.HomeView
             btnUpdateDriver.setVisibility(View.GONE);
             btnRate.setVisibility(View.VISIBLE);
         } else {
-            btnEnterDestination.setVisibility(View.GONE);
+            btnEnterDestination.setVisibility(View.VISIBLE);
             btnUpdatePassenger.setVisibility(View.GONE);
             btnUpdateDriver.setVisibility(View.VISIBLE);
             btnRate.setVisibility(View.GONE);

@@ -1,6 +1,7 @@
 package com.app.comic.ui.Activity.DestinationBooking;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 import com.app.comic.R;
 import com.app.comic.api.ApiEndpoint;
 import com.app.comic.ui.Model.JSON.Driver;
-import com.app.comic.ui.Model.Receive.ListRidesReceive;
+import com.app.comic.ui.Model.JSON.Rate;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -28,13 +29,14 @@ public class DriverListAdapter extends BaseAdapter {
 
     private final Activity context;
     private final List<Driver> obj;
+    private final List<Rate> rate;
     private ListOfRidesFragment frag;
 
-    public DriverListAdapter(Activity context, ListOfRidesFragment frag, ArrayList<Driver> lists) {
+    public DriverListAdapter(Activity context, ListOfRidesFragment frag, ArrayList<Driver> lists, ArrayList<Rate> rate) {
         this.context = context;
         this.obj = lists;
         this.frag = frag;
-
+        this.rate = rate;
     }
 
     @Override
@@ -93,6 +95,8 @@ public class DriverListAdapter extends BaseAdapter {
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     //.placeholder(ContextCompat.getDrawable(getActivity(), R.drawable.promo_home))
                     .into(vh.driverImage);
+        }else{
+            vh.driverImage.setImageResource(R.drawable.no_profile);
         }
 
         vh.username.setText(obj.get(position).getUsername());
@@ -100,7 +104,8 @@ public class DriverListAdapter extends BaseAdapter {
         vh.btnViewDriverProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                frag.viewDriver(obj.get(position));
+                Log.e("RATEE", String.valueOf(rate.get(position)));
+                //frag.viewDriver(obj.get(position),rate.get(position));
             }
         });
 

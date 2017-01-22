@@ -2,13 +2,12 @@ package com.app.comic.ui.Activity.DestinationBooking;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,18 +17,12 @@ import com.app.comic.api.ApiEndpoint;
 import com.app.comic.application.MainApplication;
 import com.app.comic.base.BaseFragment;
 import com.app.comic.ui.Model.JSON.Driver;
-import com.app.comic.ui.Model.Receive.DestinationReceive;
-import com.app.comic.ui.Model.Receive.DriverInfoReceive;
-import com.app.comic.ui.Model.Receive.ListRidesReceive;
+import com.app.comic.ui.Model.JSON.Rate;
 import com.app.comic.ui.Model.Receive.SelectReceive;
-import com.app.comic.ui.Model.Request.ListRidesRequest;
 import com.app.comic.ui.Model.Request.SelectRequest;
 import com.app.comic.ui.Module.DriverProfileModule;
-import com.app.comic.ui.Module.ListRidesModule;
-import com.app.comic.ui.Module.LoginModule;
 import com.app.comic.ui.Presenter.HomePresenter;
 import com.app.comic.ui.Realm.RealmObjectController;
-import com.app.comic.utils.ExpandAbleGridView;
 import com.app.comic.utils.SharedPrefManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -66,10 +59,29 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
     @InjectView(R.id.driver_addImage)
     ImageView driver_addImage;
 
+    @InjectView(R.id.call)
+    Button call;
+
+    @InjectView(R.id.star1)
+    ImageView star1;
+
+    @InjectView(R.id.star2)
+    ImageView star2;
+
+    @InjectView(R.id.star3)
+    ImageView star3;
+
+    @InjectView(R.id.star4)
+    ImageView star4;
+
+    @InjectView(R.id.star5)
+    ImageView star5;
+
     // Validator Attributes
     SharedPrefManager pref;
     Activity act;
     Driver driver;
+    Rate rate;
 
     public static DriverProfileFragment newInstance(Bundle bundle) {
 
@@ -95,12 +107,16 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         Bundle bundle = getArguments();
         String driverInfo = bundle.getString("DRIVER_INFO");
 
+        Bundle bundle2 = getArguments();
+        String rateInfo = bundle2.getString("RATE_INFO");
+
         Gson book = new Gson();
         driver = book.fromJson(driverInfo, Driver.class);
 
+        Gson book2 = new Gson();
+        rate = book2.fromJson(rateInfo, Rate.class);
 
-
-        setData(driver);
+        setData(driver, rate);
 
         btnSignUp.setText("Select");
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -115,10 +131,17 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
                 presenter.onSelectRequest(selectRequest);
             }
         });
+
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callPassenger(driver.getPhone());
+            }
+        });
         return view;
     }
 
-    public void setData(Driver obj) {
+    public void setData(Driver obj, Rate obj2) {
 
         if (driver.getDriver_image() != null) {
             Glide.with(getActivity()).load(ApiEndpoint.imagePath() + "" + driver.getDriver_image())
@@ -127,7 +150,7 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
                     //.placeholder(ContextCompat.getDrawable(getActivity(), R.drawable.promo_home))
                     .into(driver_addImage);
         } else {
-            driver_addImage.setVisibility(View.GONE);
+            driver_addImage.setImageResource(R.drawable.no_profile);
         }
 
         txtUsername.setText(obj.getUsername());
@@ -135,6 +158,31 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         txtPlateNumber.setText(obj.getPlat_number());
         txtTypeOfCar.setText(obj.getCar_type());
 
+        String rate = obj2.getRate();
+
+        if (rate.equals("1")){
+            star1.setImageResource(R.drawable.star_g);
+        }else if (rate.equals("2")){
+            star2.setImageResource(R.drawable.star_g);
+        }else if (rate.equals("3")){
+            star3.setImageResource(R.drawable.star_g);
+        }else if (rate.equals("4")){
+            star4.setImageResource(R.drawable.star_g);
+        }else if (rate.equals("5")){
+            star5.setImageResource(R.drawable.star_g);
+        }else{
+            star1.setImageResource(R.drawable.star_n);
+            star2.setImageResource(R.drawable.star_n);
+            star3.setImageResource(R.drawable.star_n);
+            star4.setImageResource(R.drawable.star_n);
+            star5.setImageResource(R.drawable.star_n);
+        }
+
+    }
+
+    public void callPassenger(String phoneNo) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNo));
+        startActivity(intent);
     }
 
     @Override

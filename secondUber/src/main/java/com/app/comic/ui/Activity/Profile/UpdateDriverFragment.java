@@ -199,6 +199,7 @@ public class UpdateDriverFragment extends BaseFragment implements HomePresenter.
             @Override
             public void onClick(View v) {
 
+                /*txtSmoker.setHint("Smoker");*/
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
                 popupSelection(purposeList, getActivity(), txtSmoker, true, view);
             }
@@ -208,6 +209,7 @@ public class UpdateDriverFragment extends BaseFragment implements HomePresenter.
             @Override
             public void onClick(View v) {
 
+                /*txtTypeOfCar.setHint("Type of Car");*/
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
                 popupSelection(carList, getActivity(), txtTypeOfCar, true, view);
             }

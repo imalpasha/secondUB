@@ -53,12 +53,6 @@
             android:layout_marginTop="6dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="STATE" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -71,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="Select one"
+                    android:hint="State"
                     android:padding="10dp"
                     android:textColorHint="@color/input_login_hint"
                     android:textSize="17dp" />
@@ -93,6 +87,7 @@
             android:textColorHint="@color/input_login_hint" />
 
         <EditText
+            android:visibility="gone"
             android:id="@+id/txtRideTime"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -133,12 +128,6 @@
             android:layout_marginTop="6dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="STATE" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -151,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="Select one"
+                    android:hint="State"
                     android:padding="10dp"
                     android:textColorHint="@color/input_login_hint"
                     android:textSize="17dp" />

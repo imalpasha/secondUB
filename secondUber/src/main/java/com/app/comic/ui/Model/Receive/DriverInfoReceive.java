@@ -2,11 +2,18 @@ package com.app.comic.ui.Model.Receive;
 
 public class DriverInfoReceive {
 
-
     private String status;
     private String message;
     private Driver info;
+    private String rate;
 
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
 
     public String getStatus() {
         return status;
@@ -142,7 +149,7 @@ public class DriverInfoReceive {
         this.message = data.getMessage();
         this.status = data.getStatus();
         this.info = data.getInfo();
-
+        this.rate = data.getRate();
 
     }
 

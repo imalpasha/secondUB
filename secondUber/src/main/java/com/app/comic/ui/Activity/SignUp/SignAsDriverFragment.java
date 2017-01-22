@@ -165,16 +165,17 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
         purposeList = getSmoker(act);
         carList = getCarType(act);
 
-        txtSmoker.setText(purposeList.get(0).getText());
+        /*txtSmoker.setText(purposeList.get(0).getText());
         txtSmoker.setTag(purposeList.get(0).getCode());
 
         txtTypeOfCar.setText(carList.get(0).getText());
-        txtTypeOfCar.setTag(carList.get(0).getCode());
+        txtTypeOfCar.setTag(carList.get(0).getCode());*/
 
         txtSmoker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                txtSmoker.setHint("Smoker");
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
                 popupSelection(purposeList, getActivity(), txtSmoker, true, view);
             }
@@ -184,6 +185,7 @@ public class SignAsDriverFragment extends BaseFragment implements HomePresenter.
             @Override
             public void onClick(View v) {
 
+                txtTypeOfCar.setHint("Type of Car");
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
                 popupSelection(carList, getActivity(), txtTypeOfCar, true, view);
             }

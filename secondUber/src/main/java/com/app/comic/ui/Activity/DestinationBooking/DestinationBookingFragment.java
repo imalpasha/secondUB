@@ -119,17 +119,18 @@ public class DestinationBookingFragment extends BaseFragment implements DatePick
         originList = getState(act);
         destinationList = getState(act);
 
-        txtRideState.setText(originList.get(0).getText());
-        txtRideState.setTag(originList.get(0).getCode());
+        /*txtRideState.setText(originList.get(0).getText());
+        txtRideState.setTag(originList.get(0).getCode());*/
 
-        txtRideStateDestination.setText(destinationList.get(0).getText());
-        txtRideStateDestination.setTag(destinationList.get(0).getCode());
+        /*txtRideStateDestination.setText(destinationList.get(0).getText());
+        txtRideStateDestination.setTag(destinationList.get(0).getCode());*/
 
         txtRideState.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
+                txtRideState.setHint("State");
                 popupSelection(originList, getActivity(), txtRideState, true, view);
             }
         });
@@ -139,6 +140,7 @@ public class DestinationBookingFragment extends BaseFragment implements DatePick
             public void onClick(View v) {
 
                 //Log.e(purposeList.get(0).getCode().toString(),purposeList.get(1).getCode().toString());
+                txtRideStateDestination.setHint("State");
                 popupSelection(destinationList, getActivity(), txtRideStateDestination, true, view);
             }
         });

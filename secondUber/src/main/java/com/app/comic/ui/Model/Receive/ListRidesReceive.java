@@ -7,6 +7,7 @@ package com.app.comic.ui.Model.Receive;
  /* Response From API */
 
 import com.app.comic.ui.Model.JSON.Driver;
+import com.app.comic.ui.Model.JSON.Rate;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,15 @@ public class ListRidesReceive {
     private String type;
     private ArrayList<Passenger> passenger;
     private ArrayList<Driver> driver;
+    private ArrayList<Rate> rate;
+
+    public ArrayList<Rate> getRate() {
+        return rate;
+    }
+
+    public void setRate(ArrayList<Rate> rate) {
+        this.rate = rate;
+    }
 
     public class Passenger{
 
@@ -27,6 +37,15 @@ public class ListRidesReceive {
         private String phone;
         private String smoker;
         private String pref_gender;
+        private String user_image;
+
+        public String getUser_image() {
+            return user_image;
+        }
+
+        public void setUser_image(String user_image) {
+            this.user_image = user_image;
+        }
 
         public String getStudent_id() {
             return student_id;
@@ -85,7 +104,6 @@ public class ListRidesReceive {
         }
     }
 
-
     public ListRidesReceive(ListRidesReceive data) {
 
         this.status = data.getStatus();
@@ -111,7 +129,6 @@ public class ListRidesReceive {
     public void setDriver(ArrayList<Driver> driver) {
         this.driver = driver;
     }
-
 
     public String getType() {
         return type;

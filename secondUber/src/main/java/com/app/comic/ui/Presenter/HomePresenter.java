@@ -1,7 +1,5 @@
 package com.app.comic.ui.Presenter;
 
-import android.util.Log;
-
 import com.app.comic.ui.Model.Receive.DestinationReceive;
 import com.app.comic.ui.Model.Receive.DriverInfoReceive;
 import com.app.comic.ui.Model.Receive.ListRidesReceive;
