@@ -17,6 +17,15 @@ public class Driver{
     private String smoker;
     private String pref_gender;
     private String driver_image;
+    private String rate;
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
 
     public String getDriver_image() {
         return driver_image;
