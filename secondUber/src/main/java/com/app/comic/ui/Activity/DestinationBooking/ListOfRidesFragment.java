@@ -179,14 +179,14 @@ public class ListOfRidesFragment extends BaseFragment implements HomePresenter.L
         startActivity(intent);
     }
 
-    public void viewDriver(Driver obj, Rate rate) {
+    public void viewDriver(Driver obj) {
 
         String driverInfo = new Gson().toJson(obj);
-        String rateInfo = new Gson().toJson(rate);
+        //String rateInfo = new Gson().toJson(rate);
 
         Intent intent = new Intent(getActivity(), DriverProfileActivity.class);
         intent.putExtra("DRIVER_INFO", driverInfo);
-        intent.putExtra("RATE_INFO", rateInfo);
+        //intent.putExtra("RATE_INFO", rateInfo);
         getActivity().startActivity(intent);
 
     }

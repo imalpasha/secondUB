@@ -107,16 +107,16 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         Bundle bundle = getArguments();
         String driverInfo = bundle.getString("DRIVER_INFO");
 
-        Bundle bundle2 = getArguments();
-        String rateInfo = bundle2.getString("RATE_INFO");
+        //Bundle bundle2 = getArguments();
+        //String rateInfo = bundle2.getString("RATE_INFO");
 
         Gson book = new Gson();
         driver = book.fromJson(driverInfo, Driver.class);
 
-        Gson book2 = new Gson();
-        rate = book2.fromJson(rateInfo, Rate.class);
+        //Gson book2 = new Gson();
+        //rate = book2.fromJson(rateInfo, Rate.class);
 
-        setData(driver, rate);
+        setData(driver);
 
         btnSignUp.setText("Select");
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -141,7 +141,7 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         return view;
     }
 
-    public void setData(Driver obj, Rate obj2) {
+    public void setData(Driver obj) {
 
         if (driver.getDriver_image() != null) {
             Glide.with(getActivity()).load(ApiEndpoint.imagePath() + "" + driver.getDriver_image())
@@ -158,7 +158,7 @@ public class DriverProfileFragment extends BaseFragment implements HomePresenter
         txtPlateNumber.setText(obj.getPlat_number());
         txtTypeOfCar.setText(obj.getCar_type());
 
-        String rate = obj2.getRate();
+        String rate = obj.getRate();
 
         if (rate.equals("1")){
             star1.setImageResource(R.drawable.star_g);
